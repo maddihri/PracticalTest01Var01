@@ -22,11 +22,10 @@ public class PracticalTest01Var01SecondaryActivity extends Activity {
 	    	  for (int i = 0; i < parts.length; i++)
 	    		  suma += Integer.parseInt(parts[i]);
 	    	  setResult(suma, new Intent());
-	    	  finish();
 	      } else {
 	    	  setResult(-1000, new Intent());
-	    	  finish();
 	      }
+	      finish();
 	    }
 	}
 

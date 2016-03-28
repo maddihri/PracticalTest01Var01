@@ -61,6 +61,7 @@ public class PracticalTest01Var01MainActivity extends Activity {
 	@Override
 	protected void onSaveInstanceState(Bundle savedInstanceState) {
 		savedInstanceState.putString("sum_cached", String.valueOf(sum_cached));
+		savedInstanceState.putString("string_cached", string_cached);
 	}
 
 	@Override
@@ -68,6 +69,7 @@ public class PracticalTest01Var01MainActivity extends Activity {
 		if (savedInstanceState.containsKey("sum_cached")) {
 			sum_cached = Integer.parseInt(savedInstanceState
 					.getString("sum_cached"));
+			string_cached = savedInstanceState.getString("string_cached");
 		}
 	}
 
@@ -86,7 +88,6 @@ public class PracticalTest01Var01MainActivity extends Activity {
 				} else {
 					allTerms.setText(number.getText().toString());
 				}
-				string_cached = allTerms.getText().toString();
 				break;
 			case R.id.compute:
 				if (string_cached.equals(allTerms.getText().toString())) {
@@ -101,6 +102,7 @@ public class PracticalTest01Var01MainActivity extends Activity {
 					startActivityForResult(intent,
 							SECONDARY_ACTIVITY_REQUEST_CODE);
 				}
+				string_cached = allTerms.getText().toString();
 				break;
 			default:
 				break;
